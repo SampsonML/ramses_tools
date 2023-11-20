@@ -1,4 +1,4 @@
-def RAMSES_tar_loader(path, output, extension=".tar.gz"):
+def ramses_tar_loader(path, output, extension=".tar.gz"):
     """
     Function to extract RAMSES data from a 
     tar file to store as a YT data product
