@@ -6,7 +6,7 @@ def ramses_tar_loader(path, output, extension=".tar.gz"):
     Requires
     --------
     import tarfile
-    import os
+    import shutil
     
     Inputs
     ------
@@ -24,5 +24,5 @@ def ramses_tar_loader(path, output, extension=".tar.gz"):
     with tarfile.open(path + filenum + extension, "r") as tf:
         tf.extractall(path="./tmp_dir")    
     ds = yt.load("./tmp_dir/" + loadName)   # load in the file to yt
-    os.rmdir("./tmp_dir")                   # delete temporary extraction
+    shutil.rmtree("./tmp_dir")              # delete temporary extraction
     return ds
